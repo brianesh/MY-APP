@@ -37,8 +37,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 </head>
 <body>
    
-    <div class="container2"><h1>SIGN IN YOUR DETAILS</h1>
+    <div class="container2">
     <form action="login.php" onsubmit="return validation()" method="post" name="registerForm"></form>
+    <h1>SIGN IN YOUR DETAILS</h1>
     <div>
             <label for="text">SURNAME</label>
             <input type="text" placeholder="your surname">

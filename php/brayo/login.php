@@ -42,45 +42,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Login Page</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="js/validation.js" defer></script>
-    <style>
-        container1{
-form{
-    display: flex;
-    flex-direction: column;
-  align-items: center;
-  border-radius: 100px;
-  width: 500px;
-  height: 450px;
-  background-color: #cddbe2;
-  padding: 20px;
-  margin-left: 450px;
-  
-}
-
-input[type=text], input[type=password], input[type=tel],input[type=email]{
-    width: 60%;
-    padding: 10px;
-    margin: 15px;
-    display: block;
-    border: none;
-    background: #b8a3a3;
-}
-button {
-    background-color: #200a53;
-    color: white;
-    padding: 14px;
-    margin: 8px;
-    width: 100%;
-  }
-  links{
-    margin-left: 50px;
-    padding: 10px;
-  }
-}
-</style>
 </head>
 <body>
     <div class="container1">
+    <form action="login.php" onsubmit="return validation()" method="post" name="loginForm"></form>
             <h1>Login Page</h1>
             <label for="username">Username</label>
             <input type="text" name="username" placeholder="Your username" id="username">
