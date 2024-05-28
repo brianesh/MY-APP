@@ -1,5 +1,5 @@
 <?php
-session_start(); // Start the session for user authentication
+session_start(); 
      
 include("connection.php");
 include("functions.php");
@@ -36,7 +36,10 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
     <script src="/js/validation.js" defer></script>
 </head>
 <body>
+   
     <div class="container2"><h1>SIGN IN YOUR DETAILS</h1>
+    <form action="login.php" onsubmit="return validation()" method="post" name="registerForm"></form>
+    <div>
             <label for="text">SURNAME</label>
             <input type="text" placeholder="your surname">
             <label for="text">OTHER NAMES</label>
@@ -49,14 +52,19 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
             <input type="email" placeholder="your email">
             <label for="tel">MOBILE NUMBER</label>
             <input type="tel" placeholder="your mobile number">
+            </div>
+            <div>
              <p>Choose your security question.</p>
           <select name="question" id="question">
             <option value="question">What is your mother's maiden name?<option>
             <option value="question">What is the name of your first pet?</option>
             <option value="question">What is the name of the town where you were born?</option>
           </select>
+          </div>
+          <div>
           <label for="answer">SECURITY ANSWER</label>
-          <input type="text" id="fname" name="fname" placeholder="Security answer">
+          <input type="text" id="security_answer" name="security_answer" placeholder="Security answer">
+          </div>
         
         <div class="buttons">
             <button>SIGN UP</button>

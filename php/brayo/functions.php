@@ -40,19 +40,20 @@ class User {
   function delete() {
   }
 }
-function check_login($conn)
-{
-  if(isset($SESSION['']))
-  {
-    $id = $_SESSION['user_id'];
-    $query = "select * from users where user_id= '$id' limit 1";
-    $result =mysqli_query($conn,$query);
-    if($result && mysqli_num_rows($result) >0)
-    {
-      $user_data = mysqli_fetch_assoc($result);
-      return $user_data;
-    }
+
+function check_login($mysqli) {
+  if (isset($_SESSION['user_id'])) {
+      $id = $_SESSION['user_id'];
+      $stmt = $mysqli->prepare("SELECT * FROM user WHERE id = ?");
+      $stmt->bind_param("i", $id);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      if ($result->num_rows == 1) {
+          return $result->fetch_assoc();
+      }
+      return null;
   }
+  
   header("location: login.php");
   die;
 }

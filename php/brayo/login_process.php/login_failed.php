@@ -1,7 +1,7 @@
 <?php
-
-
-
+session_start();
+include("connection.php");
+include("functions.php");
 
 ?>
 <!DOCTYPE html>
@@ -17,7 +17,7 @@
         <h1>Login Failed</h1>
         <p>Invalid username or password. Please try again.</p>
         <div class="links">
-            <a href="index.html">Back to Login</a>
+            <a href="index.php">Back to Login</a>
         </div>
     </div>
 </body>

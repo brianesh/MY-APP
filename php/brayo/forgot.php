@@ -1,5 +1,8 @@
 <?php
 
+include("connection.php");
+include("functions.php");
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     $securityQuestion = $_POST["security_question"];
@@ -12,9 +15,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $error = "Passwords do not match.";
     } else {
         $servername = "localhost";
-        $username = "username";
+        $username = "root";
         $password = "password";
-        $dbname = "database_name";
+        $dbname = "application";
 
         $conn = new mysqli($servername, $username, $password, $dbname);
 

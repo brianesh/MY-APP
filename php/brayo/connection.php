@@ -1,15 +1,11 @@
 <?php
-$dbhost ="localhost";
-$dbuser = "root";
-$dbpass = "password";
-$dbname = "application";
+$host = 'localhost';
+$db = 'application';
+$user = 'root';
+$password = 'password';
 
-$mysqli = new mysqli(hostname: $host,
-                     username: $username,
-                     password: $password,
-                     database: $dbname);
-                     
-if($conn = mysqli_connect($dbhost, $dbuser, $dbpass,$dbname));
-{
-    die("failed to connect!");
+$mysqli = new mysqli($host, $user, $password, $db);
+
+if ($mysqli->connect_error) {
+    die('Connect Error (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error);
 }
